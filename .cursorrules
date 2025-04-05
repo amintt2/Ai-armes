@@ -1,0 +1,40 @@
+# AI-Powered Autocomplete Project Intelligence
+
+## Project Structure Patterns
+- Web application code goes in the `web/` directory
+- Core autocomplete engine code goes in `app/core/`
+- Platform-specific implementations go in `app/platforms/{platform}/`
+- Shared utilities go in `utils/`
+- Project documentation goes in `memory-bank/`
+
+## Implementation Guidelines
+- The core engine should be lightweight and minimally impact system resources
+- Platform-specific code should be isolated with a clear abstraction layer
+- Web application should follow Next.js best practices
+- All code should be thoroughly documented
+- Privacy and security are top priorities
+
+## Development Workflow
+- Update memory-bank documentation when making significant changes
+- Test platform-specific implementations on actual target platforms
+- Follow established naming conventions across the project
+- Keep the web application and client applications clearly separated
+- Maintain clear interfaces between components
+
+## Repository Organization
+- Use feature branches for new functionality
+- Create separate PRs for web and application changes where possible
+- Group related changes in sensible commits
+- Update relevant documentation alongside code changes
+
+## Known Patterns
+- Core engine interfaces should be platform-agnostic
+- Platform-specific modules implement these interfaces
+- Web application communicates with Supabase for backend functionality
+- Client applications sync with Supabase for context data
+
+## Project-Specific Conventions
+- Use TypeScript for web development
+- Use Rust or C++ for core engine and platform-specific code
+- Follow platform-specific guidelines for native code
+- Keep memory usage to a minimum in client applications 
