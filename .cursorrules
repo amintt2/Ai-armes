@@ -20,12 +20,25 @@
 - Follow established naming conventions across the project
 - Keep the web application and client applications clearly separated
 - Maintain clear interfaces between components
+- Work on one feature/component at a time using sprint-based approach
+- Complete each sprint before moving to the next one
 
 ## Repository Organization
 - Use feature branches for new functionality
+- Never work directly on the master branch
+- Feature branches should have descriptive names (`feature/feature-name`)
+- Only merge to master after user validation of working functionality
 - Create separate PRs for web and application changes where possible
 - Group related changes in sensible commits
 - Update relevant documentation alongside code changes
+- Use descriptive commit messages
+
+## Git Branch Management
+- Master branch contains only validated, working code
+- Create a feature branch for each new functional unit
+- Current sprint tasks should be in a dedicated feature branch
+- Future sprint tasks should wait until current sprint is completed
+- Close feature branches after merging to master
 
 ## Known Patterns
 - Core engine interfaces should be platform-agnostic

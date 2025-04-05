@@ -45,6 +45,42 @@ flowchart TD
     Website <--> Storage
 ```
 
+## Development Workflow
+
+### Git Branching Strategy
+```mermaid
+gitGraph
+    commit id: "initial"
+    branch feature/auth-flow
+    checkout feature/auth-flow
+    commit id: "add auth components"
+    commit id: "implement login flow"
+    commit id: "add tests"
+    checkout main
+    merge feature/auth-flow id: "validated auth flow" tag: "v0.1.0"
+    branch feature/download-page
+    checkout feature/download-page
+    commit id: "create download UI"
+    commit id: "implement platform detection"
+    checkout main
+    merge feature/download-page id: "validated download page" tag: "v0.2.0"
+```
+
+### Sprint-Based Development
+```mermaid
+gantt
+    title Project Sprints
+    dateFormat  YYYY-MM-DD
+    section Web App
+    Authentication Flow    :active, auth, 2023-04-06, 14d
+    Download Page          :download, after auth, 14d
+    Pricing Page           :after download, 14d
+    Dashboard              :after pricing, 14d
+    section Core Engine
+    Windows Text Capture   :after dashboard, 21d
+    Suggestion Generation  :after windows, 21d
+```
+
 ## Design Patterns
 
 ### Client-Side Patterns

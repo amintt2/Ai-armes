@@ -3,6 +3,25 @@
 ## Current Focus
 Continuing development of the Next.js web application and preparing to implement core functionality for the autocomplete engine.
 
+## Development Workflow
+We follow a structured development workflow:
+
+1. **Sprint-Based Development**:
+   - Work on specific features/components one at a time
+   - Complete one task/sprint before moving to the next
+   - Focus on delivering working functionality in each sprint
+
+2. **Git Workflow**:
+   - Always create feature branches from master for new development
+   - Never work directly on the master branch
+   - Commit and push changes to the feature branch
+   - Only merge to master after user validation of working functionality
+   - Create clear, descriptive commit messages
+
+3. **Active Branches**:
+   - **master**: Main stable branch (no direct commits)
+   - No feature branches currently active
+
 ## Recent Activities
 - Created base project structure for web and app components
 - Set up Next.js web application with Tailwind CSS using Bun as package manager
@@ -13,6 +32,7 @@ Continuing development of the Next.js web application and preparing to implement
 - Defined core engine interfaces and data structures
 - Created platform-specific module interfaces
 - Defined Supabase database schema with security policies
+- Set up Git repository with initial commit
 
 ## Active Decisions
 1. **Web Application Implementation**:
@@ -32,27 +52,22 @@ Continuing development of the Next.js web application and preparing to implement
 
 ## Next Steps
 
-### Immediate Tasks
-1. Create additional pages for the web application:
-   - Download page with platform-specific downloads
-   - Pricing page with subscription options
-   - Dashboard page for authenticated users
-
+### Current Sprint: Web Authentication Flow
+1. Create a feature branch `feature/auth-flow`
 2. Implement functional authentication with Supabase:
    - Connect the UI to the Supabase context provider
    - Add server-side authentication checks
    - Implement protected routes
+3. Test authentication flow
+4. Request user validation
+5. Merge to master only after validation
 
-3. Begin implementation of core autocomplete engine functionality:
-   - Basic text context capture for Windows
-   - Simple suggestion generation algorithm
-   - Initial cloud synchronization module
-
-### Short-Term Objectives
-1. Set up Supabase project with the defined schema
-2. Implement Stripe integration for subscription management
-3. Create user dashboard with context management features
-4. Build a working prototype of the Windows client
+### Future Sprints
+1. Web Application Download Page (after Authentication Flow is completed)
+2. Web Application Pricing Page
+3. Web Application Dashboard
+4. Core Engine - Windows Text Capture
+5. Core Engine - Suggestion Generation
 
 ## Current Challenges
 - Ensuring secure authentication flow with Supabase
