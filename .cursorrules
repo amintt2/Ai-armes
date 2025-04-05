@@ -1,4 +1,20 @@
-# AI-Powered Autocomplete Project Intelligence
+# .cursorrules - Project Intelligence
+
+## User Role
+- The user is the project director with final decision-making authority
+- All significant decisions require explicit user approval
+- The user determines when a sprint is complete
+- The user selects which sprint to work on next
+- The user decides on implementation approaches
+
+## Collaboration Framework
+- Ask detailed questions before starting any sprint implementation
+- Present options with justifications for all significant decisions
+- Avoid making assumptions about requirements or approaches
+- Work together as partners with the user as the final decision maker
+- Provide regular progress updates during implementation
+- Seek user validation before considering work complete
+- When asking the user questions, use H1 markdown format "# Asking the user" followed by the questions in normal text
 
 ## Project Structure Patterns
 - Web application code goes in the `web/` directory
@@ -14,31 +30,21 @@
 - All code should be thoroughly documented
 - Privacy and security are top priorities
 
-## Development Workflow
-- Update memory-bank documentation when making significant changes
+## Git Workflow
+- Never work directly on the master branch
+- Create feature branches for each sprint with descriptive names (`feature/feature-name`)
+- Ask for permission before creating branches or executing significant Git operations
+- Only merge to master after user validation of working functionality
+- Close feature branches after merging to master
+
+## Development Process
+- Follow sprint-based approach with user direction
+- Complete each sprint before moving to the next one
+- Implement one feature/component at a time
 - Test platform-specific implementations on actual target platforms
 - Follow established naming conventions across the project
 - Keep the web application and client applications clearly separated
 - Maintain clear interfaces between components
-- Work on one feature/component at a time using sprint-based approach
-- Complete each sprint before moving to the next one
-
-## Repository Organization
-- Use feature branches for new functionality
-- Never work directly on the master branch
-- Feature branches should have descriptive names (`feature/feature-name`)
-- Only merge to master after user validation of working functionality
-- Create separate PRs for web and application changes where possible
-- Group related changes in sensible commits
-- Update relevant documentation alongside code changes
-- Use descriptive commit messages
-
-## Git Branch Management
-- Master branch contains only validated, working code
-- Create a feature branch for each new functional unit
-- Current sprint tasks should be in a dedicated feature branch
-- Future sprint tasks should wait until current sprint is completed
-- Close feature branches after merging to master
 
 ## Known Patterns
 - Core engine interfaces should be platform-agnostic
@@ -50,4 +56,18 @@
 - Use TypeScript for web development
 - Use Rust or C++ for core engine and platform-specific code
 - Follow platform-specific guidelines for native code
-- Keep memory usage to a minimum in client applications 
+- Keep memory usage to a minimum in client applications
+
+## Memory Bank Maintenance
+- Update all memory bank files when making significant changes
+- Ensure activeContext.md reflects current sprint focus
+- Keep progress.md updated with completed work and next steps
+- Document architecture decisions in systemPatterns.md
+- Record technical implementation details in techContext.md
+
+## User Interaction Format
+- When asking questions, use "# Asking the user" in H1 markdown format
+- Place the actual questions in normal text below the heading
+- Wait for user response before proceeding with implementation
+- Use this format for all clarifying questions and decision points
+- Consider the user as an agent that can be called by using this specific format 

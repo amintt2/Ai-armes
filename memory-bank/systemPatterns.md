@@ -45,7 +45,109 @@ flowchart TD
     Website <--> Storage
 ```
 
+## Collaboration Patterns
+
+### Project Direction Flow
+```mermaid
+flowchart TD
+    U[User/Project Director] -->|Selects| S[Sprint Priority]
+    U -->|Makes| AD[Architecture Decisions]
+    U -->|Provides| R[Requirements]
+    U -->|Determines| A[Implementation Approach]
+    U -->|Validates| C[Completed Work]
+    U -->|Decides When| SC[Sprint is Complete]
+    
+    A[AI Assistant] -->|Asks Questions| U
+    A -->|Presents Options| U
+    A -->|Seeks Approval| U
+    A -->|Implements Based on| R
+    A -->|Reports Progress to| U
+    A -->|Requests Validation from| U
+```
+
+### Development Communication Flow
+```mermaid
+sequenceDiagram
+    participant U as User/Project Director
+    participant A as AI Assistant
+    participant C as Codebase
+    
+    U->>A: Request feature implementation
+    A->>A: Analyze requirements
+    A->>U: Ask detailed clarifying questions
+    U->>A: Provide clarification
+    A->>U: Present implementation options with justifications
+    U->>A: Select approach
+    A->>U: Ask permission to create branch
+    U->>A: Grant permission
+    A->>C: Create branch & implement
+    A->>U: Provide progress updates
+    A->>U: Present implementation for review
+    U->>A: Provide feedback
+    A->>C: Make adjustments
+    A->>U: Request validation
+    U->>A: Validate functionality
+    U->>A: Decide if sprint is complete
+    A->>U: Ask permission to merge
+    U->>A: Grant permission
+    A->>C: Merge to master
+    U->>A: Select next sprint
+```
+
+### Decision-Making Framework
+```mermaid
+flowchart TD
+    Start[Task Identified] --> Understand[Understand Requirements]
+    Understand --> Clear{Requirements Clear?}
+    Clear -->|No| Ask[Ask Clarifying Questions]
+    Ask --> Understand
+    
+    Clear -->|Yes| Options[Present Implementation Options with Justifications]
+    Options --> UserDecision[User Makes Decision]
+    
+    UserDecision --> Permission{Permission to Proceed?}
+    Permission -->|No| Adjust[Adjust Approach]
+    Adjust --> Options
+    
+    Permission -->|Yes| Implement[Implement Solution]
+    Implement --> Progress[Provide Progress Updates]
+    Progress --> Review[Present for Review]
+    Review --> Feedback[User Provides Feedback]
+    Feedback --> Changes{Changes Needed?}
+    
+    Changes -->|Yes| Revise[Revise Implementation]
+    Revise --> Review
+    
+    Changes -->|No| SprintComplete{User Confirms Sprint Complete?}
+    SprintComplete -->|No| Revise
+    SprintComplete -->|Yes| NextSprint[User Selects Next Sprint]
+```
+
 ## Development Workflow
+
+### Sprint Lifecycle
+```mermaid
+stateDiagram-v2
+    [*] --> SprintPlanning
+    
+    SprintPlanning --> UserApproval: Present options
+    UserApproval --> Rejected: User rejects or modifies
+    Rejected --> SprintPlanning: Adjust based on feedback
+    
+    UserApproval --> Implementation: User approves
+    Implementation --> ProgressUpdate: Regular updates
+    ProgressUpdate --> Implementation
+    
+    Implementation --> Review: Complete implementation
+    Review --> Refinement: User feedback
+    Refinement --> Review: Make adjustments
+    
+    Review --> UserValidation: User satisfied with changes
+    UserValidation --> [*]: User confirms sprint complete
+    
+    UserValidation --> NextSprint: User selects next sprint
+    NextSprint --> [*]
+```
 
 ### Git Branching Strategy
 ```mermaid
